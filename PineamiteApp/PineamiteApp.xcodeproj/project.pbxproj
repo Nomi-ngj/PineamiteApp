@@ -6,6 +6,15 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		AA26D1732E3E6ADE00091CDA /* DesignSystem in Frameworks */ = {isa = PBXBuildFile; productRef = AA26D1722E3E6ADE00091CDA /* DesignSystem */; };
+		AA26D1752E3E6ADE00091CDA /* Domain in Frameworks */ = {isa = PBXBuildFile; productRef = AA26D1742E3E6ADE00091CDA /* Domain */; };
+		AA26D1772E3E6ADE00091CDA /* EntryList in Frameworks */ = {isa = PBXBuildFile; productRef = AA26D1762E3E6ADE00091CDA /* EntryList */; };
+		AA26D1792E3E6ADE00091CDA /* Networking in Frameworks */ = {isa = PBXBuildFile; productRef = AA26D1782E3E6ADE00091CDA /* Networking */; };
+		AA26D17B2E3E6ADE00091CDA /* RallyMap in Frameworks */ = {isa = PBXBuildFile; productRef = AA26D17A2E3E6ADE00091CDA /* RallyMap */; };
+		AA26D17D2E3E6ADE00091CDA /* Theme in Frameworks */ = {isa = PBXBuildFile; productRef = AA26D17C2E3E6ADE00091CDA /* Theme */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXContainerItemProxy section */
 		AA26D1082E3E367600091CDA /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -70,6 +79,12 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AA26D17D2E3E6ADE00091CDA /* Theme in Frameworks */,
+				AA26D1772E3E6ADE00091CDA /* EntryList in Frameworks */,
+				AA26D1752E3E6ADE00091CDA /* Domain in Frameworks */,
+				AA26D1792E3E6ADE00091CDA /* Networking in Frameworks */,
+				AA26D17B2E3E6ADE00091CDA /* RallyMap in Frameworks */,
+				AA26D1732E3E6ADE00091CDA /* DesignSystem in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -96,6 +111,7 @@
 				AA26D0FC2E3E367400091CDA /* PineamiteApp */,
 				AA26D10A2E3E367600091CDA /* PineamiteAppTests */,
 				AA26D1142E3E367600091CDA /* PineamiteAppUITests */,
+				AA26D1712E3E6ADE00091CDA /* Frameworks */,
 				AA26D0FB2E3E367400091CDA /* Products */,
 			);
 			sourceTree = "<group>";
@@ -108,6 +124,13 @@
 				AA26D1112E3E367600091CDA /* PineamiteAppUITests.xctest */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		AA26D1712E3E6ADE00091CDA /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -130,6 +153,12 @@
 			);
 			name = PineamiteApp;
 			packageProductDependencies = (
+				AA26D1722E3E6ADE00091CDA /* DesignSystem */,
+				AA26D1742E3E6ADE00091CDA /* Domain */,
+				AA26D1762E3E6ADE00091CDA /* EntryList */,
+				AA26D1782E3E6ADE00091CDA /* Networking */,
+				AA26D17A2E3E6ADE00091CDA /* RallyMap */,
+				AA26D17C2E3E6ADE00091CDA /* Theme */,
 			);
 			productName = PineamiteApp;
 			productReference = AA26D0FA2E3E367400091CDA /* PineamiteApp.app */;
@@ -423,7 +452,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
-				IPHONEOS_DEPLOYMENT_TARGET = 15.6;
+				IPHONEOS_DEPLOYMENT_TARGET = 15;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -456,7 +485,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
-				IPHONEOS_DEPLOYMENT_TARGET = 15.6;
+				IPHONEOS_DEPLOYMENT_TARGET = 15;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -586,6 +615,33 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		AA26D1722E3E6ADE00091CDA /* DesignSystem */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = DesignSystem;
+		};
+		AA26D1742E3E6ADE00091CDA /* Domain */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = Domain;
+		};
+		AA26D1762E3E6ADE00091CDA /* EntryList */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = EntryList;
+		};
+		AA26D1782E3E6ADE00091CDA /* Networking */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = Networking;
+		};
+		AA26D17A2E3E6ADE00091CDA /* RallyMap */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = RallyMap;
+		};
+		AA26D17C2E3E6ADE00091CDA /* Theme */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = Theme;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = AA26D0F22E3E367400091CDA /* Project object */;
 }
