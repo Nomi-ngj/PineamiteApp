@@ -29,9 +29,27 @@
 		AA26D1112E3E367600091CDA /* PineamiteAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PineamiteAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
+/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
+		AA26D1252E3E380A00091CDA /* Exceptions for "PineamiteApp" folder in "PineamiteApp" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Packages/Base/Domain,
+				Packages/Base/Theme,
+				Packages/Features/EntryList,
+				Packages/Features/RallyMap,
+				Packages/Infrastructure/DesignSystem,
+				Packages/Infrastructure/Networking,
+			);
+			target = AA26D0F92E3E367400091CDA /* PineamiteApp */;
+		};
+/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
+
 /* Begin PBXFileSystemSynchronizedRootGroup section */
 		AA26D0FC2E3E367400091CDA /* PineamiteApp */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				AA26D1252E3E380A00091CDA /* Exceptions for "PineamiteApp" folder in "PineamiteApp" target */,
+			);
 			path = PineamiteApp;
 			sourceTree = "<group>";
 		};
