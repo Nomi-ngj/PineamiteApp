@@ -26,9 +26,7 @@ public struct CustomBottomTabBar: View {
                         .overlay(
                             TabBarShape()
                                 .stroke(Color.gray.opacity(selectedTab == .race ? 0.2 : 0.8), lineWidth: selectedTab == .race ? 2:1)
-                        )
-
-                        
+                        )                        
                         .shadow(color: .black.opacity(0.3), radius: 10, x: 0, y: -2)
 
                     HStack {

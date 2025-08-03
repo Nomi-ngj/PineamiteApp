@@ -6,12 +6,16 @@
 //
 
 import SwiftUI
+import Theme
 
 @main
 struct PineamiteAppApp: App {
+    
+    let appTheme: Theme = Theme()
     var body: some Scene {
         WindowGroup {
             ContentView()
+                .environmentObject(appTheme)
         }
     }
 }
