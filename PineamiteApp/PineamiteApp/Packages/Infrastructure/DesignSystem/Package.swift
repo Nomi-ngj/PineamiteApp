@@ -5,17 +5,29 @@ import PackageDescription
 
 let package = Package(
     name: "DesignSystem",
+    platforms: [
+        .iOS(.v15)
+    ],
     products: [
-        // Products define the executables and libraries a package produces, making them visible to other packages.
         .library(
             name: "DesignSystem",
-            targets: ["DesignSystem"]),
+            targets: ["DesignSystem"]
+        ),
+    ],
+    dependencies: [
+        .package(path: "../Domain"),
+        .package(path: "../Theme")
     ],
     targets: [
-        // Targets are the basic building blocks of a package, defining a module or a test suite.
-        // Targets can depend on other targets in this package and products from dependencies.
         .target(
-            name: "DesignSystem"),
+            name: "DesignSystem",
+            dependencies:
+                ["Domain", "Theme"]
+//                [
+//                .product(name: "Domain", package: "Domain")
+//                .product(name: "Domain", package: "Domain")
+//            ]
+        ),
         .testTarget(
             name: "DesignSystemTests",
             dependencies: ["DesignSystem"]
