@@ -77,9 +77,11 @@ public struct Typography {
     public let footnote = AppFont.regular.swiftUIFont(15)
     /// Footnote medium font.
     public let footnoteMedium = AppFont.semiBold.swiftUIFont(15)
+    public let footnoteBold = AppFont.bold.swiftUIFont(15)
     /// Caption 1 font.
     public let caption1 = AppFont.regular.swiftUIFont(14)
     public let caption1Med = AppFont.semiBold.swiftUIFont(14)
+    public let caption1Bold = AppFont.bold.swiftUIFont(14)
     /// Caption 2 font.
     public let caption2 = AppFont.regular.swiftUIFont(13)
     public let caption2Med = AppFont.semiBold.swiftUIFont(13)

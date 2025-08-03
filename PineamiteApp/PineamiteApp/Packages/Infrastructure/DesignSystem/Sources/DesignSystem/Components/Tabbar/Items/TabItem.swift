@@ -19,4 +19,14 @@ public enum TabItem: Int, CaseIterable {
         case .profile: return Image(.profileIcon)
         }
     }
+    
+    var label: String {
+        switch self {
+        case .home: return "Home"
+        case .race: return "Entry List"
+        case .center: return "Live"
+        case .trophy: return "Trophy"
+        case .profile: return "Profile"
+        }
+    }
 }

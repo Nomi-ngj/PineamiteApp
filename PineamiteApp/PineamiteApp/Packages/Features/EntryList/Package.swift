@@ -15,14 +15,13 @@ let package = Package(
         ),
     ],
     dependencies: [
-        .package(path: "../Domain")
+        .package(path: "../Domain"),
+        .package(path: "../DesignSystem"),
     ],
     targets: [
         .target(
             name: "EntryList",
-            dependencies: [
-                .product(name: "Domain", package: "Domain")
-            ]
+            dependencies: ["Domain", "DesignSystem"]
         ),
         .testTarget(
             name: "EntryListTests",
