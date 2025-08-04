@@ -9,18 +9,6 @@
   - Filter entries by championship or car class
   - See car models, teams, and rally numbers
 
-- **Stage Navigation**
-  - Integrated rally map with stage tracking (coming soon)
-  - Easy access to team locations and check-in points
-
-- **Video Center**
-  - Quick access to race videos and highlights
-  - Capture and upload rally moments (camera support included)
-
-- **Points & Rankings**
-  - Follow championship points and positions
-  - Driver/co-driver stats updated dynamically
-
 - **Interactive UI**
   - Custom curved tab bar with elevated action button
   - Vibrant, rally-themed visuals and a clean modern layout
@@ -29,6 +17,9 @@
 ## Architecture
 
 The app follows a scalable modular architecture:
+
+<img width="316" height="512" alt="Architecture" src="https://github.com/user-attachments/assets/50e116f4-8460-4a25-a922-5cab02d2005a" />
+
 
 ```
 PineamiteApp/
@@ -50,6 +41,9 @@ PineamiteApp/
 │       └── Networking/     # API and data fetching
 ```
 
+##  Dependency Relationship Diagram
+<img width="700" height="700" alt="RelationDaigram" src="https://github.com/user-attachments/assets/01ae14cb-7bdb-4094-83db-e11bbb0e7e19" />
+
 ## iPhone Recording
 Click to play video
 
@@ -64,9 +58,6 @@ Click to play video
 <a href="https://github.com/user-attachments/assets/e395b93c-1c65-4ca4-861c-e4af021d9e2e">
 <img width="450" height="648" alt="Dashboard Video" src="https://github.com/user-attachments/assets/f7443f6c-2ef3-4c87-8589-52fc7b77e3d7" />  
 </a>
-
-
-
 
 ## iPhone Screenshots
 <img width="300" height="652" alt="Dashboard" src="https://github.com/user-attachments/assets/1977cc61-88b0-4303-89db-d7281504d20a" />
@@ -83,9 +74,6 @@ Click to play video
 <img width="450" height="648" alt="iPad Menu" src="https://github.com/user-attachments/assets/d053bd6b-a776-45b3-b2ac-85c095b1827d" />
 <img width="450" height="648" alt="iPad  Menu2" src="https://github.com/user-attachments/assets/3e47b2d8-7a88-4e20-ab30-057153b79649" />
 <img width="450" height="648" alt="iPad  Profile" src="https://github.com/user-attachments/assets/4d59f23b-905c-4948-9a60-1d2aa8c9a71c" />
-
-## Relation Daigram
-<img width="700" height="700" alt="RelationDaigram" src="https://github.com/user-attachments/assets/01ae14cb-7bdb-4094-83db-e11bbb0e7e19" />
 
 ## Fonts & Design
 
