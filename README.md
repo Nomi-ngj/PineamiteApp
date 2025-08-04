@@ -54,7 +54,15 @@ PineamiteApp/
 Click to play video
 
 <a href="https://github.com/user-attachments/assets/fe0779d1-53b3-4acf-842e-ac16f7d790a6">
-<img width="300" height="652" alt="Dashboard Video" src="https://github.com/user-attachments/assets/1977cc61-88b0-4303-89db-d7281504d20a" />  
+<img width="300" height="652" alt="Dashboard Video" src="https://github.com/user-attachments/assets/fac8e2b4-085a-4705-bb3b-7e50900507b6" />  
+</a>
+
+
+## iPad Recording
+Click to play video
+
+<a href="https://github.com/user-attachments/assets/e395b93c-1c65-4ca4-861c-e4af021d9e2e">
+<img width="450" height="648" alt="Dashboard Video" src="https://github.com/user-attachments/assets/f7443f6c-2ef3-4c87-8589-52fc7b77e3d7" />  
 </a>
 
 
