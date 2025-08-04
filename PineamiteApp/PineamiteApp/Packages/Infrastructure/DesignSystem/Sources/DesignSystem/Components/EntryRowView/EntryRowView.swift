@@ -2,7 +2,7 @@
 //  EntryRowView.swift
 //  DesignSystem
 //
-//  Created by Rohit Kumar on 02/08/2025.
+//  Created by Nouman Gul Junejo on 02/08/2025.
 //
 
 import SwiftUI
@@ -25,7 +25,8 @@ public struct EntryRowView: View {
             contentView
         }
         .frame(maxWidth: .infinity)
-        .frame(height: entry.entryNumber == nil ? 60 : 110)
+        .frame(height: entry.entryNumber == nil ? 65 : 110)
+        .padding(.vertical, 8)
         .padding(.horizontal, 12)
     }
 }
@@ -39,7 +40,7 @@ private extension EntryRowView {
             if entry.entryNumber == nil {
                 RoundedRectangle(cornerRadius: 16)
                     .fill(Color.clear)
-                    .shadow(color: Color.black.opacity(0.15), radius: 4)
+                    
                     .overlay(
                         RoundedRectangle(cornerRadius: 16)
                             .strokeBorder(
@@ -47,6 +48,8 @@ private extension EntryRowView {
                                 style: StrokeStyle(lineWidth: 1, dash: [6])
                             )
                     )
+                    .shadow(color: Color.black.opacity(0.15), radius: 4)
+                    .frame(height: 60)
             } else {
                 RoundedRectangle(cornerRadius: 16)
                     .fill(LinearGradient.blackToGray)
@@ -108,6 +111,8 @@ private extension EntryRowView {
             if entry.entryNumber == nil {
                 Text("Entry Details To Be Decided")
                     .font(theme.fonts.subheadBold)
+                    .lineLimit(1)
+                    .minimumScaleFactor(0.6)
                     .foregroundColor(.teamNameText)
             } else {
                 if let car = entry.car {

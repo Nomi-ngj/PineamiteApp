@@ -2,7 +2,7 @@
 //  CustomBottomTabBar.swift
 //  DesignSystem
 //
-//  Created by Rohit Kumar on 02/08/2025.
+//  Created by Nouman Gul Junejo on 02/08/2025.
 //
 
 import SwiftUI
@@ -25,9 +25,9 @@ public struct CustomBottomTabBar: View {
                         .clipShape(TabBarShape())
                         .overlay(
                             TabBarShape()
-                                .stroke(Color.gray.opacity(selectedTab == .race ? 0.2 : 1), lineWidth: selectedTab == .race ? 2:1)
+                                .stroke(Color.gray.opacity(selectedTab == .race ? 0.2 : 0.4), lineWidth: selectedTab == .race ? 2:1)
                         )
-                        .shadow(color: .black.opacity(0.3), radius: 10, x: 0, y: -2)
+                        .shadow(color: .black.opacity(0.3), radius: 4, x: 0, y: -2)
 
                     HStack {
                         ForEach(TabItem.allCases, id: \.self) { tab in

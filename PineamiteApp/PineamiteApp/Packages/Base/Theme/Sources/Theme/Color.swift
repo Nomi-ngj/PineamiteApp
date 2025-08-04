@@ -2,7 +2,7 @@
 //  Color.swift
 //  Theme
 //
-//  Created by Rohit Kumar on 03/08/2025.
+//  Created by Nouman Gul Junejo on 03/08/2025.
 //
 
 import SwiftUI
@@ -15,11 +15,8 @@ public extension Color {
     static let teamNameText = Color(.teamNameText)
     static let nameRowTertiary = Color(.nameRowTertiary)
     static let entryRowGradient = Color(.entryRowGradient)
-    static let primaryPillInitials   = Color(red: 163/255, green: 255/255, blue: 255/255)
-
-    static let secondaryPillBackground = Color(red: 253/255, green: 84/255, blue: 203/255).opacity(0.15)
-    static let secondaryPillInitials   = Color(red: 192/255, green: 0/255, blue: 163/255)
-
-    // MARK: - Selection & Highlights
-    static let selectionHighlight = Color(red: 80/255, green: 59/255, blue: 216/255)
+    static let appSecondary = Color(.appSecondary)
+    static let blueTintTertiary = Color(.blueTintTertiary)
+    static let appHeader = Color(.appHeader)
+    static let appNotification = Color(.appNotification)
 }

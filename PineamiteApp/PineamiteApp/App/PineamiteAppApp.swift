@@ -2,7 +2,7 @@
 //  PineamiteAppApp.swift
 //  PineamiteApp
 //
-//  Created by Rohit Kumar on 02/08/2025.
+//  Created by Nouman Gul Junejo on 02/08/2025.
 //
 
 import SwiftUI

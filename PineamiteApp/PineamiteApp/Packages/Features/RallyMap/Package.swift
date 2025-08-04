@@ -15,7 +15,8 @@ let package = Package(
             targets: ["RallyMap"]),
     ],
     dependencies: [
-        .package(path: "../Domain")
+        .package(path: "../Domain"),
+        .package(path: "../Theme")
     ],
     targets: [
         // Targets are the basic building blocks of a package, defining a module or a test suite.

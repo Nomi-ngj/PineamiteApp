@@ -2,10 +2,11 @@
 //  TabBarItemView.swift
 //  DesignSystem
 //
-//  Created by Rohit Kumar on 02/08/2025.
+//  Created by Nouman Gul Junejo on 02/08/2025.
 //
 
 import SwiftUI
+import Theme
 
 public struct TabBarItemView: View {
     let tab: TabItem
@@ -17,7 +18,7 @@ public struct TabBarItemView: View {
             tab.icon
                 .resizable()
                 .frame(width: 24, height: 24)
-                .foregroundColor(isSelected ? Color(.appSecondary) : .gray)
+                .foregroundColor(isSelected ? Color.appSecondary : .white)
         }
     }
 }
