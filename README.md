@@ -50,6 +50,16 @@ PineamiteApp/
 │       └── Networking/     # API and data fetching
 ```
 
+## iPhone Recording
+Click to play video
+
+<a href="https://github.com/user-attachments/assets/fe0779d1-53b3-4acf-842e-ac16f7d790a6">
+<img width="300" height="652" alt="Dashboard Video" src="https://github.com/user-attachments/assets/1977cc61-88b0-4303-89db-d7281504d20a" />  
+</a>
+
+
+
+
 ## iPhone Screenshots
 <img width="300" height="652" alt="Dashboard" src="https://github.com/user-attachments/assets/1977cc61-88b0-4303-89db-d7281504d20a" />
 <img width="300" height="652" alt="EntryList_SheetDown" src="https://github.com/user-attachments/assets/157ef61e-7daa-4081-b61b-7b8f3f0102ba" />
