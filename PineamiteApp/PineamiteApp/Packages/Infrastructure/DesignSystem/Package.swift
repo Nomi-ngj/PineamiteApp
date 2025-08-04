@@ -23,10 +23,6 @@ let package = Package(
             name: "DesignSystem",
             dependencies:
                 ["Domain", "Theme"]
-//                [
-//                .product(name: "Domain", package: "Domain")
-//                .product(name: "Domain", package: "Domain")
-//            ]
         ),
         .testTarget(
             name: "DesignSystemTests",

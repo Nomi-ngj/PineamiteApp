@@ -2,7 +2,7 @@
 //  Typography.swift
 //  Theme
 //
-//  Created by Rohit Kumar on 03/08/2025.
+//  Created by Nouman Gul Junejoon 03/08/2025.
 //
 
 

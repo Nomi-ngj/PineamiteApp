@@ -2,14 +2,15 @@
 //  BottomSheetView.swift
 //  DesignSystem
 //
-//  Created by Rohit Kumar on 03/08/2025.
+//  Created by Nouman Gul Junejoon 03/08/2025.
 //
 
 import SwiftUI
+import Theme
 
 public struct BottomSheetView<Content: View>: View {
-    let maxHeight: CGFloat
-    let minHeight: CGFloat
+    @State var maxHeight: CGFloat = Constants.maxHeight
+    @State var minHeight: CGFloat = Constants.minHeight
     
     @Binding var resetToMin: Bool // external trigger
     @State private var currentHeight: CGFloat
@@ -17,16 +18,16 @@ public struct BottomSheetView<Content: View>: View {
     
     let content: Content
 
-    public init(
-        minHeight: CGFloat,
-        maxHeight: CGFloat,
-        resetToMin: Binding<Bool>,
+    @State private var isLandscape = UIDevice.current.orientation.isLandscape
+    @Environment(\.layoutDirection) var layoutDirection
+    
+    public init(resetToMin: Binding<Bool>,
         @ViewBuilder content: () -> Content
     ) {
-        self.minHeight = minHeight
-        self.maxHeight = maxHeight
+//        self.minHeight = minHeight
+//        self.maxHeight = maxHeight
         self._resetToMin = resetToMin
-        self._currentHeight = State(initialValue: minHeight)
+        self._currentHeight = State(initialValue: Constants.minHeight)
         self.content = content()
     }
 
@@ -45,14 +46,7 @@ public struct BottomSheetView<Content: View>: View {
             }
             .frame(width: geometry.size.width, height: currentHeight + dragOffset)
             .background(
-                LinearGradient(
-                    gradient: Gradient(colors: [
-                        Color(red: 70/255, green: 40/255, blue: 110/255),
-                        .black
-                    ]),
-                    startPoint: .top,
-                    endPoint: .bottom
-                )
+                LinearGradient.grayToBlack
                 .clipShape(RoundedRectangle(cornerRadius: 20))
             )
             .cornerRadius(20)
@@ -71,6 +65,8 @@ public struct BottomSheetView<Content: View>: View {
             )
             .onChange(of: resetToMin) { newValue in
                 if newValue {
+                    self.maxHeight = Constants.maxHeight
+                    self.minHeight = Constants.minHeight
                     withAnimation(.spring()) {
                         currentHeight = minHeight
                     }
@@ -78,6 +74,20 @@ public struct BottomSheetView<Content: View>: View {
                 }
             }
             .animation(.interactiveSpring(), value: dragOffset)
+        }
+        .onAppear {
+            NotificationCenter.default.addObserver(forName: UIDevice.orientationDidChangeNotification, object: nil, queue: .main) { _ in
+                
+                Task {
+                    await MainActor.run {
+                        if Constants.isIPad {
+                            self.isLandscape = UIDevice.current.orientation.isLandscape
+                            self.resetToMin = true
+                        }
+                    }
+                }
+                
+            }
         }
         .edgesIgnoringSafeArea(.bottom)
     }

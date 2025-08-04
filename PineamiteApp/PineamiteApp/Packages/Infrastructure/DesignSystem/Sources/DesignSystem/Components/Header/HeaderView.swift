@@ -2,7 +2,7 @@
 //  HeaderView.swift
 //  DesignSystem
 //
-//  Created by Rohit Kumar on 03/08/2025.
+//  Created by Nouman Gul Junejoon 03/08/2025.
 //
 
 
@@ -98,7 +98,7 @@ private struct HeaderBackground: View {
         ZStack {
             TopLeftWedge()
                 .fill(Color.appHeader)
-                .frame(width: 265, height: 110)
+                .frame(width: 290, height: 110)
                 .offset(x: -90, y: -10)
                 .opacity(0.4)
 
@@ -130,7 +130,8 @@ public struct HeaderView: View {
                 MenuLeftView(selectedTab: $selectedTab, onMenuTapped: onMenuTapped)
                 Spacer()
                 ZStack {
-                    PointsView(points: points)
+                        PointsView(points: points)
+                            .opacity(selectedTab == .race ? 1:0.01)
                 }
             }
             .padding(.top, 50)

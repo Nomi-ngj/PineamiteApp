@@ -2,7 +2,7 @@
 //  ContentView.swift
 //  PineamiteApp
 //
-//  Created by Rohit Kumar on 02/08/2025.
+//  Created by Nouman Gul Junejoon 02/08/2025.
 //
 
 import SwiftUI
@@ -17,85 +17,98 @@ struct ContentView: View {
     private let theme = Theme()
     let event = RaceEventLocation.mockEventLocation
     
-    let minHeight: CGFloat = UIScreen.main.bounds.height * 0.20 // 25% of screen height
-    let maxHeight: CGFloat = UIScreen.main.bounds.height - 140 // 85% of screen height
-
     let mockChampions = ["Championship 1","Championship 2","Championship 3","Championship 4","Championship 5"]
     let mockCarClass = ["Car Class 1","Car Class 2","Car Class 3","Car Class 4","Car Class 5"]
     
     let mockRallyEntry = RallyEntry.mockEntries
     
     @State private var resetSheetToMin = false
+    @State private var isMenuOpen = false
+    @State var selectedSideMenu: SideMenuItem = .profile
     @State var title:String = "Dashboard"
-
+    
     
     var body: some View {
-        
-        ZStack {
-           
-            if currentTab == .race {
-                RallyMapView(event: event)
-                    .edgesIgnoringSafeArea(.all)
-                
-                BottomSheetView(minHeight: minHeight, maxHeight: maxHeight,
-                                resetToMin: $resetSheetToMin) {
+        SideMenuContainerView(selectedSideMenu: $selectedSideMenu, isMenuOpen: $isMenuOpen) {
+            ZStack {
+                if currentTab == .race {
+                    RallyMapView(event: event)
+                        .edgesIgnoringSafeArea(.all)
                     
-                    VStack(alignment: .leading, spacing: 16) {
-                        HStack(alignment: .center) {
-                            
-                            BackView {
-                                resetSheetToMin = true
-                            }
-                            TitleAndSubtitleView(entriesCount: mockRallyEntry.count)
-                            RallyIconView()
-                        }
-                        .padding(.horizontal)
+                    BottomSheetView(resetToMin: $resetSheetToMin) {
                         
-                        HStack(alignment: .firstTextBaseline, spacing: 20) {
-                            VStack(alignment: .leading) {
-                                FilterDropdown(
-                                    label: "Select Championship",
-                                    options: mockChampions,
-                                    overlayColor: .namePillSecondaryTint
-                                ) { selection in
-                                    debugPrint(selection)
+                        VStack(alignment: .leading, spacing: 16) {
+                            HStack(alignment: .center) {
+                                
+                                BackView {
+                                    resetSheetToMin = true
                                 }
+                                TitleAndSubtitleView(entriesCount: mockRallyEntry.count)
+                                RallyIconView()
                             }
-                            .frame(maxWidth: .infinity) // Equal width
+                            .padding(.horizontal)
                             
-                            VStack(alignment: .leading) {
-                                FilterDropdown(
-                                    label: "Select Car Class",
-                                    options: mockCarClass,
-                                    overlayColor: .blueTintTertiary
-                                ) { selection in
-                                    debugPrint(selection)
+                            HStack(alignment: .firstTextBaseline, spacing: 20) {
+                                VStack(alignment: .leading) {
+                                    FilterDropdown(
+                                        label: "Select Championship",
+                                        options: mockChampions,
+                                        overlayColor: .namePillSecondaryTint
+                                    ) { selection in
+                                        debugPrint(selection)
+                                    }
                                 }
+                                .frame(maxWidth: .infinity) // Equal width
+                                
+                                VStack(alignment: .leading) {
+                                    FilterDropdown(
+                                        label: "Select Car Class",
+                                        options: mockCarClass,
+                                        overlayColor: .blueTintTertiary
+                                    ) { selection in
+                                        debugPrint(selection)
+                                    }
+                                }
+                                .frame(maxWidth: .infinity) // Equal width
                             }
-                            .frame(maxWidth: .infinity) // Equal width
+                            .padding(.horizontal)
+                            
+                            
+                            EntryList(rallyEntry: mockRallyEntry)
                         }
-                        .padding(.horizontal)
-                        
-                        
-                        EntryList(rallyEntry: mockRallyEntry)
+                        .frame(alignment: .top)
                     }
-                    .frame(alignment: .top)
-                }    
-            }
-            
-            VStack {
-                HeaderView(selectedTab: $currentTab, points: 2500, onMenuTapped: {
-                    debugPrint("didTapped Header")
-                })
+                }
+                
+                VStack {
+                    HeaderView(selectedTab: $currentTab, points: 2500, onMenuTapped: {
+                        isMenuOpen = true
+                    })
+                    .ignoresSafeArea()
+                    Spacer()
+                }
+                VStack {
+                    Spacer()
+                    Spacer()
+                    Spacer()
+                    CustomBottomTabBar(selectedTab: $currentTab)
+                        .ignoresSafeArea()
+                    
+                }
                 .ignoresSafeArea()
-                Spacer()
             }
-            
-            VStack {
-                CustomBottomTabBar(selectedTab: $currentTab)
-            }
-            .ignoresSafeArea()
         }
+        .ignoresSafeArea()
+        .onChange(of: selectedSideMenu) { newValue in
+                debugPrint(newValue)
+                if newValue == .profile {
+                    currentTab = .profile
+                }else if newValue == .tracks {
+                    currentTab = .race
+                }else{
+                    currentTab = .home
+                }
+            }
     }
 }
 
