@@ -7,7 +7,6 @@
 
 
 import SwiftUI
-import Theme
 
 // MARK: - Menu Button + Title
 public struct MenuLeftView: View {
@@ -21,12 +20,14 @@ public struct MenuLeftView: View {
     }
 
     public var body: some View {
-        HStack(spacing: 12) {
+        HStack(alignment: .center, spacing: 13) {
             Button(action: onMenuTapped) {
                 Image(.hamburgerIcon)
+                    .frame(alignment: .bottomLeading)
+                    .padding(.bottom, -5)
             }
             Text(selectedTab.label)
-                .font(theme.fonts.headline)
+                .font(theme.fonts.title2Bold)
                 .foregroundColor(.white)
         }
     }
@@ -45,13 +46,13 @@ public struct PointsView: View {
         ZStack {
             Rectangle()
                 .foregroundColor(.clear)
-                .frame(width: 200, height: 50, alignment: .trailing)
+                .frame(width: 180, height: 50, alignment: .trailing)
                 .overlay(alignment: .trailing) {
                     GeometryReader { geo in
                         PointsBackgroundShape()
                             .fill(Color.appHeader.opacity(0.4))
                             .ignoresSafeArea()
-                            .frame(width: geo.size.width + 10 , height: geo.size.height)
+                            .frame(width: geo.size.width , height: geo.size.height)
                             .position(x: geo.size.width, y: 33)
                     }
                 }
@@ -59,31 +60,31 @@ public struct PointsView: View {
             HStack(alignment: .bottom, spacing: 16) {
                 Image(.notificationIcon)
                     .foregroundColor(.white)
-                    .padding(.top, 5)
-                    .padding(.horizontal, 5)
+//                    .padding(.top, 5)
+//                    .padding(.horizontal, 5)
                 
                 VStack(alignment: .trailing, spacing: 2) {
                     Text("\(points)")
                         .foregroundColor(.white)
-                        .font(theme.fonts.caption1Med)
+                        .font(theme.fonts.caption1Bold)
                         .padding(.top, 12)
-                        .padding(.trailing, -10)
+//                        .padding(.trailing, -10)
                     Text("points earned")
                         .foregroundColor(.white)
                         .font(theme.fonts.caption4)
                         .padding(.bottom, 8)
-                        .padding(.trailing, -10)
+//                        .padding(.trailing, -10)
                 }
-                .padding(.top, 12)
+//                .padding(.top, 12)
                 .frame(height: 40, alignment: .trailing)
             }
-            .frame(width: 200, height: 50, alignment: .trailing)
+            .frame(width: 180, height: 50, alignment: .trailing)
             .background(
                 GeometryReader { geo in
                     PointsBackgroundShape()
-                        .fill(Color.appHeader.opacity(1))
+                        .fill(Color.appHeader)
                         .ignoresSafeArea()
-                        .frame(width: geo.size.width, height: geo.size.height)
+//                        .frame(width: geo.size.width, height: geo.size.height)
                         .position(x: geo.size.width + 30, y: 33)
                 }
             )
@@ -98,15 +99,18 @@ private struct HeaderBackground: View {
         ZStack {
             TopLeftWedge()
                 .fill(Color.appHeader)
-                .frame(width: 290, height: 110)
+                .frame(width: 260, height: 116)
                 .offset(x: -90, y: -10)
                 .opacity(0.4)
+                
 
             TopLeftWedge()
                 .fill(Color.appHeader)
-                .frame(width: 240, height: 110)
+                .frame(width: 210, height: 116)
                 .offset(x: -90, y: -10)
+                
         }
+
     }
 }
 
@@ -129,10 +133,9 @@ public struct HeaderView: View {
             HStack(spacing: 12) {
                 MenuLeftView(selectedTab: $selectedTab, onMenuTapped: onMenuTapped)
                 Spacer()
-                ZStack {
-                        PointsView(points: points)
-                            .opacity(selectedTab == .race ? 1:0.01)
-                }
+                        
+                PointsView(points: points)
+//                    .opacity(selectedTab == .race ? 1:0.01)
             }
             .padding(.top, 50)
             .padding(.horizontal)

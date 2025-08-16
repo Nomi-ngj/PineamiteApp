@@ -6,7 +6,6 @@
 //
 
 import SwiftUI
-import Theme
 
 public struct TabBarItemView: View {
     let tab: TabItem

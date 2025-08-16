@@ -22,3 +22,14 @@ struct TopLeftWedge: Shape {
         return path
     }
 }
+
+
+#Preview {
+    VStack {
+        HeaderView(selectedTab: .constant(.race), points: 2400) {
+            print("Menu tapped")
+        }
+        .ignoresSafeArea()
+        Spacer()
+    }
+}

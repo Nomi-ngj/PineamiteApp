@@ -6,7 +6,6 @@
 //
 
 import SwiftUI
-import Theme
 
 public struct SideMenuView: View {
     @Binding var menuItems: [SideMenuItem]

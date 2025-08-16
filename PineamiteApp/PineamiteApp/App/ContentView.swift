@@ -8,23 +8,11 @@
 import SwiftUI
 import DesignSystem
 import EntryList
-import Domain
-import Theme
-import RallyMap
 
 struct ContentView: View {
     
     // Current Selected CustomBottomTabBar Item, Defaul is Home/Dashboard
     @State private var currentTab: TabItem = .home
-    
-    // Adding Mock Event Location on Map
-    let event = RaceEventLocation.mockEventLocation
-    
-    // Adding Mock Rally Entries
-    let mockRallyEntry = RallyEntry.mockEntries
-    
-    // Handling on Back to minimize sheet again
-    @State private var resetSheetToMin = false
     
     // Handling Menu Open/Close functionality
     @State private var isMenuOpen = false
@@ -39,51 +27,7 @@ struct ContentView: View {
             ZStack {
                 // Event List Start
                 if currentTab == .race {
-                    RallyMapView(event: event)
-                        .edgesIgnoringSafeArea(.all)
-                    BottomSheetView(resetToMin: $resetSheetToMin) {
-                        
-                        VStack(alignment: .leading, spacing: 16) {
-                            HStack(alignment: .center) {
-                                
-                                BackView {
-                                    resetSheetToMin = true
-                                }
-                                TitleAndSubtitleView(entriesCount: mockRallyEntry.count)
-                                RallyIconView()
-                            }
-                            .padding(.horizontal)
-                            
-                            HStack(alignment: .firstTextBaseline, spacing: 20) {
-                                VStack(alignment: .leading) {
-                                    FilterDropdown(
-                                        label: "Select Championship",
-                                        options: Constants.mockChampions,
-                                        overlayColor: .namePillSecondaryTint
-                                    ) { selection in
-                                        debugPrint(selection)
-                                    }
-                                }
-                                .frame(maxWidth: .infinity) // Equal width
-                                
-                                VStack(alignment: .leading) {
-                                    FilterDropdown(
-                                        label: "Select Car Class",
-                                        options: Constants.mockCarClass,
-                                        overlayColor: .blueTintTertiary
-                                    ) { selection in
-                                        debugPrint(selection)
-                                    }
-                                }
-                                .frame(maxWidth: .infinity) // Equal width
-                            }
-                            .padding(.horizontal)
-                            
-                            
-                            EntryList(rallyEntry: mockRallyEntry)
-                        }
-                        .frame(alignment: .top)
-                    }
+                    EntryList()
                 }
                 // Event List End
                 

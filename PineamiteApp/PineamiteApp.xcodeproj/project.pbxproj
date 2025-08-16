@@ -10,9 +10,8 @@
 		AA26D1732E3E6ADE00091CDA /* DesignSystem in Frameworks */ = {isa = PBXBuildFile; productRef = AA26D1722E3E6ADE00091CDA /* DesignSystem */; };
 		AA26D1752E3E6ADE00091CDA /* Domain in Frameworks */ = {isa = PBXBuildFile; productRef = AA26D1742E3E6ADE00091CDA /* Domain */; };
 		AA26D1772E3E6ADE00091CDA /* EntryList in Frameworks */ = {isa = PBXBuildFile; productRef = AA26D1762E3E6ADE00091CDA /* EntryList */; };
-		AA26D1792E3E6ADE00091CDA /* Networking in Frameworks */ = {isa = PBXBuildFile; productRef = AA26D1782E3E6ADE00091CDA /* Networking */; };
 		AA26D17B2E3E6ADE00091CDA /* RallyMap in Frameworks */ = {isa = PBXBuildFile; productRef = AA26D17A2E3E6ADE00091CDA /* RallyMap */; };
-		AA26D17D2E3E6ADE00091CDA /* Theme in Frameworks */ = {isa = PBXBuildFile; productRef = AA26D17C2E3E6ADE00091CDA /* Theme */; };
+		AA5066062E422D6800ACA234 /* Splash in Frameworks */ = {isa = PBXBuildFile; productRef = AA5066052E422D6800ACA234 /* Splash */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,11 +43,10 @@
 			membershipExceptions = (
 				Info.plist,
 				Packages/Base/Domain,
-				Packages/Base/Theme,
 				Packages/Features/EntryList,
 				Packages/Features/RallyMap,
+				Packages/Features/SplashPackage,
 				Packages/Infrastructure/DesignSystem,
-				Packages/Infrastructure/Networking,
 			);
 			target = AA26D0F92E3E367400091CDA /* PineamiteApp */;
 		};
@@ -80,10 +78,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AA26D17D2E3E6ADE00091CDA /* Theme in Frameworks */,
+				AA5066062E422D6800ACA234 /* Splash in Frameworks */,
 				AA26D1772E3E6ADE00091CDA /* EntryList in Frameworks */,
 				AA26D1752E3E6ADE00091CDA /* Domain in Frameworks */,
-				AA26D1792E3E6ADE00091CDA /* Networking in Frameworks */,
 				AA26D17B2E3E6ADE00091CDA /* RallyMap in Frameworks */,
 				AA26D1732E3E6ADE00091CDA /* DesignSystem in Frameworks */,
 			);
@@ -112,7 +109,7 @@
 				AA26D0FC2E3E367400091CDA /* PineamiteApp */,
 				AA26D10A2E3E367600091CDA /* PineamiteAppTests */,
 				AA26D1142E3E367600091CDA /* PineamiteAppUITests */,
-				AA26D1712E3E6ADE00091CDA /* Frameworks */,
+				AA5066042E422D6800ACA234 /* Frameworks */,
 				AA26D0FB2E3E367400091CDA /* Products */,
 			);
 			sourceTree = "<group>";
@@ -127,7 +124,7 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		AA26D1712E3E6ADE00091CDA /* Frameworks */ = {
+		AA5066042E422D6800ACA234 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
 			);
@@ -157,9 +154,8 @@
 				AA26D1722E3E6ADE00091CDA /* DesignSystem */,
 				AA26D1742E3E6ADE00091CDA /* Domain */,
 				AA26D1762E3E6ADE00091CDA /* EntryList */,
-				AA26D1782E3E6ADE00091CDA /* Networking */,
 				AA26D17A2E3E6ADE00091CDA /* RallyMap */,
-				AA26D17C2E3E6ADE00091CDA /* Theme */,
+				AA5066052E422D6800ACA234 /* Splash */,
 			);
 			productName = PineamiteApp;
 			productReference = AA26D0FA2E3E367400091CDA /* PineamiteApp.app */;
@@ -243,6 +239,8 @@
 			);
 			mainGroup = AA26D0F12E3E367400091CDA;
 			minimizedProjectReferenceProxies = 1;
+			packageReferences = (
+			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = AA26D0FB2E3E367400091CDA /* Products */;
 			projectDirPath = "";
@@ -632,17 +630,13 @@
 			isa = XCSwiftPackageProductDependency;
 			productName = EntryList;
 		};
-		AA26D1782E3E6ADE00091CDA /* Networking */ = {
-			isa = XCSwiftPackageProductDependency;
-			productName = Networking;
-		};
 		AA26D17A2E3E6ADE00091CDA /* RallyMap */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = RallyMap;
 		};
-		AA26D17C2E3E6ADE00091CDA /* Theme */ = {
+		AA5066052E422D6800ACA234 /* Splash */ = {
 			isa = XCSwiftPackageProductDependency;
-			productName = Theme;
+			productName = Splash;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

@@ -6,16 +6,26 @@
 //
 
 import SwiftUI
-import Theme
+import DesignSystem
+import Splash
 
 @main
 struct PineamiteAppApp: App {
     
-    let appTheme: Theme = Theme()
+    @State private var animate = false
     var body: some Scene {
         WindowGroup {
-            ContentView()
-                .environmentObject(appTheme)
+            if animate {
+                ContentView()
+            }else {
+                SplashView(onFinish: {
+                    animate = true
+                })
+                .onAppear {
+                    DesignSystem.registerFontsIfNeeded()
+                }
+            }
+            
         }
     }
 }

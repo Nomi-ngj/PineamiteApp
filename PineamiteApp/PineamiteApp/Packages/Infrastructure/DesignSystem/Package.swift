@@ -15,14 +15,16 @@ let package = Package(
         ),
     ],
     dependencies: [
-        .package(path: "../Domain"),
-        .package(path: "../Theme")
+        .package(path: "../Domain")
     ],
     targets: [
         .target(
             name: "DesignSystem",
             dependencies:
-                ["Domain", "Theme"]
+                ["Domain"],
+            resources: [
+                .process("Fonts")
+            ]
         ),
         .testTarget(
             name: "DesignSystemTests",

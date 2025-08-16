@@ -16,12 +16,13 @@ let package = Package(
     ],
     dependencies: [
         .package(path: "../Domain"),
-        .package(path: "../DesignSystem"),
+//        .package(path: "../DesignSystem"),
+        .package(path: "../RallyMap"),
     ],
     targets: [
         .target(
             name: "EntryList",
-            dependencies: ["Domain", "DesignSystem"]
+            dependencies: ["Domain", "RallyMap"]
         ),
         .testTarget(
             name: "EntryListTests",
