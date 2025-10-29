@@ -1,0 +1,12 @@
+[
+  {
+    "id": 1,
+    "driverName": "Jane Doe",
+    "carClass": "Rally2"
+  },
+  {
+    "id": 2,
+    "driverName": "John Smith",
+    "carClass": "Rally3"
+  }
+]

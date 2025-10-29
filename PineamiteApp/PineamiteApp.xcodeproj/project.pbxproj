@@ -43,10 +43,11 @@
 			membershipExceptions = (
 				Info.plist,
 				Packages/Base/Domain,
-				Packages/Features/EntryList,
-				Packages/Features/RallyMap,
-				Packages/Features/SplashPackage,
 				Packages/Infrastructure/DesignSystem,
+				Packages/Infrastructure/PineamiteNetworking,
+				Packages/Modules/EntryList,
+				Packages/Modules/RallyMap,
+				Packages/Modules/SplashPackage,
 			);
 			target = AA26D0F92E3E367400091CDA /* PineamiteApp */;
 		};
